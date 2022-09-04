@@ -1,0 +1,52 @@
+\documentclass{article}
+\input{Algo1Macros.tex}
+\begin{document}
+	\section{Ejercicio 1.}
+	(a)
+	\begin{proc}{buscar}{$\In$ l: seq$\langle\float\rangle$, $\In$ elem: $\float$, out result: $\ent$}{}
+		\pre{elem \in l}
+		\post{0 \leq result < |l| \yLuego l[result = elem]}
+	\end{proc}\\
+	(b)
+	\begin{proc}{progresionGeometricaFactor2}{$\In$ l: seq$\langle\ent\rangle$, out result: $Bool$}{}
+		\pre{True}
+		\post{result = True \longleftrightarrow (\forall i: \ent)(1 \leq i < |l| \implicaLuego l[i] = 2 * l[i-1])}
+	\end{proc}\\
+	(c)
+	\begin{proc}{minimo}{$\In$ l: sec$\langle\ent\rangle$, out result: $\ent$}{}
+		\pre{True}
+		\post{(\forall i: \ent)(0 \leq i < |l| \implica l[i] \geq result)}
+	\end{proc}
+
+	\section{Ejercicio 2.}
+
+	\section{Ejercicio 3.}
+	(a)
+	I. \{0\}
+	II. \{1, -1\}
+	III. \{$\sqrt{27}$,$-\sqrt{27}$\}\\
+	(b)
+	I. \{3\}
+	II. \{0, 2\}
+	III. \{0, 1, 2, 3, 4, 5\}\\
+	(c)
+	I. \{3\}
+	II. \{0\}
+	III. \{0\}\\
+	(d) Para aquellas listas que tengan un \'unico valor m\'aximo
+	
+	\section{Ejercicio 4.}
+	(a) Est\'a mal por ese $\wedge$ que se encuentra a la mitad de la post condici\'on. El valor 'a' no puede ser menor a cero y a la vez ser mayor o igual.\\
+	(b) Est\'a mal porque no se contempla el caso en que a sea cero.\\
+	(c) Est\'a correcto.\\
+	(d) Est\'a correcto.\\
+	(e) Est\'a mal. Por ejemplo puedo tener un a $<$ 0, mi result $\neq$ 2 * b (lo que estar\'a mal) y no estaría incumpliendo esa post-condici\'on.\\
+	(f) Est\'a correcto.
+	
+	\section{Ejercicio 5.}
+	El algoritmo propuesto para esa especificaci\'on solo sirve para aquellos valores que no est\'an en el rango [0, 1]. Entonces la pre-condici\'on nueva sería la siguiente:
+	\begin{proc}{unoMasGrande}{$\In$ x: $\float$, out result: $\float$}{}
+		\pre{x \notin [0,1]}
+		\post{result > x}
+	\end{proc}
+\end{document}
